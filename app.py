@@ -50,7 +50,8 @@ def home():
 
         # Folder upload
         upload_folder = os.path.join("static", "uploads")
-        os.makedirs(upload_folder, exist_ok=True)
+        if not os.path.isdir(upload_folder):
+        os.makedirs(upload_folder)
 
         filepath = os.path.join(
             upload_folder,
